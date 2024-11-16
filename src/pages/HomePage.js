@@ -5,9 +5,9 @@ import { FaStar, FaStarHalfAlt, FaRegStar } from 'react-icons/fa'; // Sử dụn
 const HomePage = () => {  
   // Giả lập dữ liệu đánh giá cho từng phòng (rating từ 1-5)  
   const rooms = [  
-    { id: 1, name: 'localagi', address: 'tôi la con ga nhat thich nhieu thu tren he gioi', price: '1,000,000 VND', rating: 4.5, image: 'https://media.sojohotels.com/sojo-lao-cai/8cea768748a7757b0c201677425255277.png' },  
-    { id: 2, name: 'Phòng 2', address: 'Địa chỉ khách sạn 2', price: '1,200,000 VND', rating: 3, image: 'https://q-xx.bstatic.com/xdata/images/hotel/263x210/595548591.jpeg?k=01741bc3aef1a5233dd33794dda397083092c0215b153915f27ea489468e57a2&o=' },  
-    { id: 3, name: 'Phòng 3', address: 'Địa chỉ khách sạn 3', price: '900,000 VND', rating: 4, image: 'https://via.placeholder.com/200?text=Phòng+3' },  
+    { id: 1, name: 'localagi', address: 'tôi la con ga nhat thich nhieu thu tren he gioi', price: '1,000,000 VND', rating: 4.5, image: '/images/01.jpg' },  
+    { id: 2, name: 'Phòng 2', address: 'Địa chỉ khách sạn 2', price: '1,200,000 VND', rating: 3, image: '/images/02.jpg' },  
+    { id: 3, name: 'Phòng 3', address: 'Địa chỉ khách sạn 3', price: '900,000 VND', rating: 4, image: 'https://cf.bstatic.com/xdata/images/hotel/square600/600113477.webp?k=d75dbeb9aca348a58d7ebcb4af76d95b91b915fa22b8c11b6bc5c7a420c33220&o=' },  
     { id: 4, name: 'Phòng 4', address: 'Địa chỉ khách sạn 4', price: '1,500,000 VND', rating: 5, image: 'https://via.placeholder.com/200?text=Phòng+4' },  
     { id: 5, name: 'Phòng 5', address: 'Địa chỉ khách sạn 5', price: '800,000 VND', rating: 2.5, image: 'https://via.placeholder.com/200?text=Phòng+5' },  
     { id: 6, name: 'Phòng 6', address: 'Địa chỉ khách sạn 6', price: '950,000 VND', rating: 3.5, image: 'https://via.placeholder.com/200?text=Phòng+6' },  
@@ -59,35 +59,13 @@ const HomePage = () => {
         </div>  
       </div>  
 
-      <div className="categories">  
-        <h2>Danh mục nổi bật</h2>  
-        <div className="category-container">  
-          <div className="category">  
-            <img  
-              src="https://via.placeholder.com/300x150?text=Luxury+Rooms"  
-              alt="Luxury Rooms"  
-            />  
-            <h3>Luxury Rooms</h3>  
-            <button>Đặt ngay</button>  
-          </div>  
-          <div className="category">  
-            <img  
-              src="https://via.placeholder.com/300x150?text=Budget+Rooms"  
-              alt="Budget Rooms"  
-            />  
-            <h3>Budget Rooms</h3>  
-            <button>Đặt ngay</button>  
-          </div>  
-        </div>  
-      </div>  
-
       <div className="hotel-list">  
         <h2>Phòng khách sạn phổ biến</h2>  
         <div className="hotel-grid">  
           {rooms.slice(0, 4).map((room) => (  
             <div className="hotel-item" key={room.id}>  
               <img  
-                src={`https://q-xx.bstatic.com/xdata/images/hotel/263x210/595548591.jpeg?k=01741bc3aef1a5233dd33794dda397083092c0215b153915f27ea489468e57a2&o=${room.id}`}  
+                src={room.image}  
                 alt={`Room ${room.id}`}  
               />  
               <h3>{room.name}</h3>  
@@ -109,7 +87,7 @@ const HomePage = () => {
           {rooms.slice(4, 8).map((room) => (  
             <div className="hotel-item" key={room.id}>  
               <img  
-                src={`https://q-xx.bstatic.com/xdata/images/hotel/263x210/595548591.jpeg?k=01741bc3aef1a5233dd33794dda397083092c0215b153915f27ea489468e57a2&o=${room.id}`}  
+                src={room.image}  
                 alt={`Room ${room.id}`}  
               />  
               <h3>{room.name}</h3>  
@@ -123,7 +101,7 @@ const HomePage = () => {
             </div>  
           ))}  
         </div>  
-      </div>  
+      </div>    
 
       <div className="partners">  
         <h2>Đối tác khách sạn</h2>  
