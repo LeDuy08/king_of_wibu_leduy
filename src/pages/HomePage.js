@@ -5,14 +5,14 @@ import { FaStar, FaStarHalfAlt, FaRegStar } from 'react-icons/fa'; // Sử dụn
 const HomePage = () => {  
   // Giả lập dữ liệu đánh giá cho từng phòng (rating từ 1-5)  
   const rooms = [  
-    { id: 1, name: 'localagi', address: 'tôi la con ga nhat thich nhieu thu tren he gioi', price: '1,000,000 VND', rating: 4.5, image: '/images/01.jpg' },  
-    { id: 2, name: 'Phòng 2', address: 'Địa chỉ khách sạn 2', price: '1,200,000 VND', rating: 3, image: '/images/02.jpg' },  
-    { id: 3, name: 'Phòng 3', address: 'Địa chỉ khách sạn 3', price: '900,000 VND', rating: 4, image: 'https://cf.bstatic.com/xdata/images/hotel/square600/600113477.webp?k=d75dbeb9aca348a58d7ebcb4af76d95b91b915fa22b8c11b6bc5c7a420c33220&o=' },  
-    { id: 4, name: 'Phòng 4', address: 'Địa chỉ khách sạn 4', price: '1,500,000 VND', rating: 5, image: 'https://via.placeholder.com/200?text=Phòng+4' },  
-    { id: 5, name: 'Phòng 5', address: 'Địa chỉ khách sạn 5', price: '800,000 VND', rating: 2.5, image: 'https://via.placeholder.com/200?text=Phòng+5' },  
-    { id: 6, name: 'Phòng 6', address: 'Địa chỉ khách sạn 6', price: '950,000 VND', rating: 3.5, image: 'https://via.placeholder.com/200?text=Phòng+6' },  
-    { id: 7, name: 'Phòng 7', address: 'Địa chỉ khách sạn 7', price: '1,300,000 VND', rating: 4.8, image: 'https://via.placeholder.com/200?text=Phòng+7' },  
-    { id: 8, name: 'Phòng 8', address: 'Địa chỉ khách sạn 8', price: '1,000,000 VND', rating: 4.2, image: 'https://via.placeholder.com/200?text=Phòng+8' },  
+    { id: 1, name: 'localagi dáhofdahf saklfhalkf ', address: 'tôi la con ga nhat thich nhieu thu tren he gioi', price: '1,000,000 VND', rating: 4.5, reviews: 100, image: '/images/01.jpg' },  
+    { id: 2, name: 'Phòng 2', address: 'Địa chỉ khách sạn 2', price: '1,200,000 VND', rating: 3, reviews: 45, image: '/images/02.jpg' },  
+    { id: 3, name: 'Phòng 3', address: 'Địa chỉ khách sạn 3', price: '900,000 VND', rating: 4, reviews: 200, image: '/images/03.jpg' },  
+    { id: 4, name: 'Phòng 4', address: 'Địa chỉ khách sạn 4', price: '1,500,000 VND', rating: 5, reviews: 350, image: '/images/04.jpg' },  
+    { id: 5, name: 'Phòng 5', address: 'Địa chỉ khách sạn 5', price: '800,000 VND', rating: 2.5, reviews: 30, image: '/images/05.jpg' },  
+    { id: 6, name: 'Phòng 6', address: 'Địa chỉ khách sạn 6', price: '950,000 VND', rating: 3.5, reviews: 150, image: '/images/06.jpg' },  
+    { id: 7, name: 'Phòng 7', address: 'Địa chỉ khách sạn 7', price: '1,300,000 VND', rating: 4.8, reviews: 220, image: '/images/07.jpg' },  
+    { id: 8, name: 'Phòng 8', address: 'Địa chỉ khách sạn 8', price: '1,000,000 VND', rating: 4.2, reviews: 180, image: '/images/08.jpg' },  
   ];  
 
   // Hàm render sao dựa trên rating  
@@ -44,7 +44,7 @@ const HomePage = () => {
       </div>  
 
       <div className="promotion">  
-        <h2>Mã giảm giá Khách sạn</h2>  
+        <h3>Mã giảm giá Khách sạn</h3>  
         <div className="promotion-item">  
           <span>Mã: HOTELGANNHA</span>  
           <p>Giảm đến 300K nội địa</p>  
@@ -60,7 +60,7 @@ const HomePage = () => {
       </div>  
 
       <div className="hotel-list">  
-        <h2>Phòng khách sạn phổ biến</h2>  
+        <h3>Phòng khách sạn phổ biến</h3>  
         <div className="hotel-grid">  
           {rooms.slice(0, 4).map((room) => (  
             <div className="hotel-item" key={room.id}>  
@@ -70,10 +70,13 @@ const HomePage = () => {
               />  
               <h3>{room.name}</h3>  
               <p>{room.address}</p>  
-              <p>Giá từ: {room.price}/đêm</p>  
+              <p className="price"><strong>Giá từ: {room.price}/đêm</strong></p>  
               <div className="rating">  
                 {renderStars(room.rating)}  
-                <span className="rating-text">({room.rating})</span>  
+                <div className="rating-info">
+                  <span>{room.rating}</span> {/* Đánh giá */}
+                  <span> ({room.reviews} đánh giá)</span> {/* Số người đánh giá */}
+                </div>
               </div>  
               <button>Thêm vào giỏ</button>  
             </div>  
@@ -82,7 +85,7 @@ const HomePage = () => {
       </div>  
 
       <div className="special-rooms">  
-        <h2>Phòng đặc biệt</h2>  
+        <h3>Phòng đặc biệt</h3>  
         <div className="hotel-grid">  
           {rooms.slice(4, 8).map((room) => (  
             <div className="hotel-item" key={room.id}>  
@@ -92,10 +95,13 @@ const HomePage = () => {
               />  
               <h3>{room.name}</h3>  
               <p>{room.address}</p>  
-              <p>Giá từ: {room.price}/đêm</p>  
+              <p className="price"><strong>Giá từ: {room.price}/đêm</strong></p>  
               <div className="rating">  
                 {renderStars(room.rating)}  
-                <span className="rating-text">({room.rating})</span>  
+                <div className="rating-info">
+                  <span>{room.rating}</span> {/* Đánh giá */}
+                  <span> ({room.reviews} đánh giá)</span> {/* Số người đánh giá */}
+                </div>
               </div>  
               <button>Thêm vào giỏ</button>  
             </div>  
@@ -104,28 +110,34 @@ const HomePage = () => {
       </div>    
 
       <div className="partners">  
-        <h2>Đối tác khách sạn</h2>  
+        <h3>Đối tác khách sạn</h3>  
         <p>Đối tác khách sạn trong nước và quốc tế</p>  
         <div className="partners-logos">  
-          <img src="https://q-xx.bstatic.com/xdata/images/hotel/263x210/595548591.jpeg?k=01741bc3aef1a5233dd33794dda397083092c0215b153915f27ea489468e57a2&o=" alt="Partner 1" />  
-          <img src="https://q-xx.bstatic.com/xdata/images/hotel/263x210/595548591.jpeg?k=01741bc3aef1a5233dd33794dda397083092c0215b153915f27ea489468e57a2&o=" alt="Partner 2" />  
-          <img src="https://q-xx.bstatic.com/xdata/images/hotel/263x210/595548591.jpeg?k=01741bc3aef1a5233dd33794dda397083092c0215b153915f27ea489468e57a2&o=" alt="Partner 3" />  
+          <img src="/images/017.jpg" alt="Partner 1" />  
+          <img src="/images/18.jpg" alt="Partner 2" />  
+          <img src="/images/20.jpg" alt="Partner 3" /> 
+          <img src="/images/partner4.jpg" alt="Partner 4" />
+          <img src="/images/partner5.jpg" alt="Partner 5" />
+          <img src="/images/partner6.jpg" alt="Partner 6" /> 
         </div>  
 
-        <h2>Đối tác thanh toán</h2>  
+        <h3>Đối tác thanh toán</h3>  
         <p>Những đối tác thanh toán đáng tin cậy của chúng tôi...</p>  
         <div className="payment-logos">  
-          <img src="https://via.placeholder.com/100x50?text=Payment+Partner" alt="Payment Partner 1" />  
-          <img src="https://via.placeholder.com/100x50?text=Payment+Partner" alt="Payment Partner 2" />  
-          <img src="https://via.placeholder.com/100x50?text=Payment+Partner" alt="Payment Partner 3" />  
+          <img src="/images/21.jpg" alt="Payment Partner 1" />  
+          <img src="/images/22.jpg" alt="Payment Partner 2" />  
+          <img src="/images/23.jpg" alt="Payment Partner 3" />
+          <img src="/images/21.jpg" alt="Payment Partner 1" />  
+          <img src="/images/22.jpg" alt="Payment Partner 2" />  
+          <img src="/images/23.jpg" alt="Payment Partner 3" />   
         </div>  
       </div>  
 
       <div className="hot-destinations">  
-        <h2>Điểm đến hot nhất do Traveloka đề xuất</h2>  
+        <h3>Điểm đến hot nhất do Traveloka đề xuất</h3>  
         <div className="destination-grid">  
           {[  
-            { name: 'Đà Nẵng', imgSrc: 'https://q-xx.bstatic.com/xdata/images/hotel/263x210/595548591.jpeg?k=01741bc3aef1a5233dd33794dda397083092c0215b153915f27ea489468e57a2&o=', hotels: '763 khách sạn' },  
+            { name: 'Đà Nẵng', imgSrc: '/images/24.jpg', hotels: '763 khách sạn' },  
             { name: 'Nha Trang', imgSrc: 'https://q-xx.bstatic.com/xdata/images/hotel/263x210/595548591.jpeg?k=01741bc3aef1a5233dd33794dda397083092c0215b153915f27ea489468e57a2&o=', hotels: '560 khách sạn' },  
             { name: 'Phú Quốc', imgSrc: 'https://q-xx.bstatic.com/xdata/images/hotel/263x210/595548591.jpeg?k=01741bc3aef1a5233dd33794dda397083092c0215b153915f27ea489468e57a2&o=', hotels: '925 khách sạn' },
             { name: 'Vũng Tàu', imgSrc: 'https://via.placeholder.com/200x150?text=Vũng+Tàu', hotels: '380 khách sạn' },  

@@ -17,10 +17,7 @@ body {
   display: block;
 }
 
-
-
-
-
+/* Khuyến mãi */
 .promotion {
   margin: 20px;
   text-align: left; /* Canh trái nội dung */
@@ -63,9 +60,6 @@ body {
 .promotion-item button:hover {
   background-color: #0056b3;
 }
-
-/* Mã giảm giá khách sạn */
-
 
 /* Danh mục nổi bật */
 .categories {
@@ -122,7 +116,7 @@ body {
   background-color: white;
   border-radius: 10px;
   padding: 15px;
-  text-align: center;
+  text-align: left; /* Căn trái nội dung */
 }
 
 .hotel-item img {
@@ -134,18 +128,43 @@ body {
 .hotel-item h3 {
   margin-top: 10px;
   font-size: 18px;
+  font-weight: bold; /* Đổi tên phòng thành chữ đậm */
+}
+
+.hotel-item p {
+  font-size: 14px;
+}
+
+.hotel-item .price {
+  font-weight: bold; /* In đậm giá tiền */
+  font-size: 16px;
+  color: #007bff; /* Màu sắc cho giá tiền */
 }
 
 .rating {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start; /* Căn lề trái các ngôi sao */
   margin: 10px 0;
 }
 
 .rating-text {
   margin-left: 10px;
   font-size: 14px;
+  margin-top: 3px; /* Điều chỉnh vị trí của phần đánh giá */
+}
+
+.rating-info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Căn lề phải cho số người đánh giá */
+  margin-left: 10px; /* Khoảng cách giữa sao và phần thông tin */
+}
+
+.rating-info span {
+  margin-left: 5px;
+  font-size: 12px; /* Kích thước nhỏ cho số người đánh giá */
+  color: #888; /* Màu xám cho số người đánh giá */
 }
 
 .hotel-item button {
@@ -166,29 +185,40 @@ body {
   margin: 20px 0;
 }
 
-.partners h2 {
+.partners h3 {
   text-align: center;
   margin-bottom: 10px;
 }
 
 .partners-logos, .payment-logos {
   display: flex;
+  flex-wrap: wrap; /* Cho phép các logo xuống dòng nếu không đủ chỗ */
   justify-content: space-around;
   margin: 20px 0;
 }
 
 .partners-logos img, .payment-logos img {
   max-width: 100px;
+  margin: 0 2px;
 }
 
+
+
+
+
+
+
+
+
+/* Điểm đến hot nhất */
 .hot-destinations {  
-  margin: 20px 0;  
+  margin: 40px 0;  /* Khoảng cách trên và dưới rộng thêm */
   text-align: center;  
 }  
 
 .destination-grid {  
   display: grid; /* Sử dụng grid */  
-  grid-template-columns: repeat(3, 1fr); /* Tạo 3 cột */  
+  grid-template-columns: repeat(4, 1fr); /* Tạo 4 cột */  
   gap: 20px; /* Khoảng cách giữa các item */  
 }  
 
@@ -200,4 +230,5 @@ body {
   width: 100%; /* Ảnh chiếm toàn bộ chiều rộng của item */  
   border-radius: 8px; /* Làm tròn góc ảnh */  
 }
+
 
