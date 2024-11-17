@@ -5,14 +5,14 @@ import { FaStar, FaStarHalfAlt, FaRegStar } from 'react-icons/fa'; // Sử dụn
 const HomePage = () => {  
   // Giả lập dữ liệu đánh giá cho từng phòng (rating từ 1-5)  
   const rooms = [  
-    { id: 1, name: 'localagi dáhofdahf saklfhalkf ', address: 'tôi la con ga nhat thich nhieu thu tren he gioi', price: '1,000,000 VND', rating: 4.5, reviews: 100, image: '/images/01.jpg' },  
-    { id: 2, name: 'Phòng 2', address: 'Địa chỉ khách sạn 2', price: '1,200,000 VND', rating: 3, reviews: 45, image: '/images/02.jpg' },  
-    { id: 3, name: 'Phòng 3', address: 'Địa chỉ khách sạn 3', price: '900,000 VND', rating: 4, reviews: 200, image: '/images/03.jpg' },  
-    { id: 4, name: 'Phòng 4', address: 'Địa chỉ khách sạn 4', price: '1,500,000 VND', rating: 5, reviews: 350, image: '/images/04.jpg' },  
-    { id: 5, name: 'Phòng 5', address: 'Địa chỉ khách sạn 5', price: '800,000 VND', rating: 2.5, reviews: 30, image: '/images/05.jpg' },  
-    { id: 6, name: 'Phòng 6', address: 'Địa chỉ khách sạn 6', price: '950,000 VND', rating: 3.5, reviews: 150, image: '/images/06.jpg' },  
-    { id: 7, name: 'Phòng 7', address: 'Địa chỉ khách sạn 7', price: '1,300,000 VND', rating: 4.8, reviews: 220, image: '/images/07.jpg' },  
-    { id: 8, name: 'Phòng 8', address: 'Địa chỉ khách sạn 8', price: '1,000,000 VND', rating: 4.2, reviews: 180, image: '/images/08.jpg' },  
+    { id: 1, name: 'New Star Inn Boutique Hotel', address: 'TP. Hồ Chí Minh, Việt Nam', price: '1,000,000 VND', rating: 4.5, reviews: 100, image: '/images/001.jpg' },  
+    { id: 2, name: 'Skylark Boutique Hotel', address: 'Hà Nội, Việt Nam', price: '1,200,000 VND', rating: 3, reviews: 45, image: '/images/002.jpg' },  
+    { id: 3, name: 'Flamingo Hotel', address: 'Đà Nẵng, VIệt Nam', price: '900,000 VND', rating: 4, reviews: 200, image: '/images/003.jpg' },  
+    { id: 4, name: 'Sài Gòn Hotel', address: 'Sài Gòn, Việt Nam', price: '1,500,000 VND', rating: 5, reviews: 350, image: '/images/004.jpg' },  
+    { id: 5, name: 'Galaxy Boutique Sai Gon', address: 'TP. Hồ Chí Minh, Việt Nam', price: '1800,000 VND', rating: 4.5, reviews: 30, image: '/images/005.jpg' },  
+    { id: 6, name: 'Ipeace Hotel', address: 'TP. Hồ Chí Minh, Việt Nam', price: '1950,000 VND', rating: 3.5, reviews: 150, image: '/images/006.jpg' },  
+    { id: 7, name: 'The Reverie Saigon', address: 'TP. Hồ Chí Minh, Việt Nam', price: '3,300,000 VND', rating: 4.8, reviews: 220, image: '/images/007.jpg' },  
+    { id: 8, name: 'Love Hotel', address: 'Hue, Việt Nam', price: '2,000,000 VND', rating: 4.2, reviews: 180, image: '/images/008.jpg' },  
   ];  
 
   // Hàm render sao dựa trên rating  
@@ -78,7 +78,7 @@ const HomePage = () => {
                   <span> ({room.reviews} đánh giá)</span> {/* Số người đánh giá */}
                 </div>
               </div>  
-              <button>Thêm vào giỏ</button>  
+              <button>Đặt phòng</button>  
             </div>  
           ))}  
         </div>  
@@ -103,7 +103,7 @@ const HomePage = () => {
                   <span> ({room.reviews} đánh giá)</span> {/* Số người đánh giá */}
                 </div>
               </div>  
-              <button>Thêm vào giỏ</button>  
+              <button>Đặt phòng</button>  
             </div>  
           ))}  
         </div>  
@@ -116,7 +116,7 @@ const HomePage = () => {
           <img src="/images/017.jpg" alt="Partner 1" />  
           <img src="/images/18.jpg" alt="Partner 2" />  
           <img src="/images/20.jpg" alt="Partner 3" /> 
-          <img src="/images/partner4.jpg" alt="Partner 4" />
+          <img src="/images/019.jpg" alt="Partner 4" />
           <img src="/images/partner5.jpg" alt="Partner 5" />
           <img src="/images/partner6.jpg" alt="Partner 6" /> 
         </div>  
